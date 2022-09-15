@@ -10,6 +10,6 @@
 
 Developed using NodeJS and PostgreSQL on the server, plain HTML, JS, CSS on the client, Solidity for smart contract interaction, BOKU is participating in EVMOS Hackathon 2022
 
-# Express yourself in [BOKU.blog](https://boku.blog)
+# Express yourself in [BOKU](https://boku.blog)
 
 @2022 BOKU - All rights reserved by Kuyawa
