@@ -1,0 +1,75 @@
+<%
+function dateLong(date) {
+	var opt = {
+		weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    };
+	return (new Date(date)).toLocaleDateString('en', opt);
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include('tmp-head.html'); %>
+	<link rel="stylesheet" type="text/css" href="/styles/common.css">
+</head>
+<body>
+	<%- include('tmp-header.html'); %>
+	<content>
+		<div id="frames" class="wrap">
+			<%- include('tmp-side.html'); %>
+			<div id="main">
+			<% if(blog.posts.length>0) { %>
+			  <% blog.posts.forEach(function(item){ %>
+				<article id="<%=item.postid%>">
+					<h1 class="title"><%=item.title%></h1>
+					<h5><a class="gotopost" href="/p/<%=item.postid%>">Posted on <%=dateLong(item.created)%></a></h5>
+					<div class="content">
+					<% if(item.content.length>1000) { %>
+						<%-item.content.substr(0,1000)+'...'%>
+						<h5><a class="gotopost" href="/p/<%=item.postid%>">Read more &raquo;</a></h5>
+					<% } else { %>
+						<%-item.content%>
+					<% } %>
+					</div>
+					<% if(blog.editable) { %>
+					<div class="actions">
+						<nav> <a class="button" href="/edit/<%=item.postid%>">Edit</a> <button class="delete" onclick="deletePost('<%=item.postid%>')">Delete</button> </nav>
+					</div>
+					<% } %>
+				</article>
+			  <% }); %>
+			<% } else { %>
+				<article>
+					<h1 class="title">No posts created</h1>
+					<h5>Posted on <%=dateLong(new Date())%></h5>
+					<div class="content">
+						<p>You haven't created any posts yet.</p>
+						<p>Click on 'New post' link on the sidebar and start expressing yourself</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+					<div class="actions">
+						<nav> <a class="button" href="/newpost">New Post</a> </nav>
+					</div>
+				</article>			  
+			<% }; %>
+			</div>
+			<%- include('tmp-menu.html'); %>
+		</div>
+	</content>
+	<%- include('tmp-footer.html'); %>
+	<script src="/scripts/web3.min.js"></script>
+	<script src="/scripts/wallet.js"></script>
+	<script src="/scripts/blog-abi.js"></script>
+	<script src="/scripts/blog-bin.js"></script>
+	<script src="/scripts/blog.js"></script>
+	<script src="/scripts/common.js"></script>
+</body>
+</html>

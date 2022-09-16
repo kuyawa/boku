@@ -1,0 +1,31 @@
+			<div id="menu">
+				<div class="box">
+					<% if(blog.editable) { %>
+					<h2>Activity</h2>
+					<ul class="menu">
+						<li><a href="/newpost">New post</a></li>
+						<li class="disabled">New image</li>
+						<li class="disabled">New page</li>
+						<li><a href="/account">My account</a></li>
+					</ul>
+					<% } else { %>
+					<h3>Welcome</h3>
+					<p><img src="/media/boku-text.svg" height="24px"></p>
+					<p class="small">BOKU is a blogging platform in EVMOS blockchain where you can post your thoughts uncensored and forever</p>
+					<h2><a class="accent" href="/create">Create your blog!</a></h2>
+					<p class="small">All you need is a crypto wallet like <a id="getmeta" href="https://metamask.io/" target="_blank">Metamask</a> and some funds to start your journey in BOKU</p>
+					<p class="small">The only app that respects your privacy. No ads, no trackers, no analytics to detect usage patterns, nada, just write what's in your head and share it with your friends</p>
+					<h2><a class="accent" href="/create">Start today!</a></h2>
+					<% } %>
+					<hr class="sep">
+					<h2>Latest posts</h2>
+					<ul id="lastposts" class="menu">
+		  			<% posts.forEach(function(item){ %>
+						<li>
+							<a class="post-title" href="/p/<%=item.postid%>"><%=item.title%></a><br>
+						    <a class="post-owner" href="/a/<%=item.blogid%>">by <%=item.username%></a>
+						</li>
+				    <% }); %>
+					</ul>				
+				</div>
+			</div>

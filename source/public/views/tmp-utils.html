@@ -1,0 +1,11 @@
+<%
+function dateLong(date) {
+	var opt = {
+		weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    };
+	return (new Date(date)).toLocaleDateString('en', opt);
+}
+%>

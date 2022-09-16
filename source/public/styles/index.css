@@ -1,0 +1,65 @@
+html, body { margin: 0; padding: 0; }
+body { color: #eee; background-color: #202428; font: normal 1em helvetica, sans-serif; }
+
+header  { background-color: #282f38; }
+content { display: block; }
+footer  { height: 100px; border-top: 1px solid #282f38; padding-top: 40px; }
+.wrap   { display: block; margin: 0 auto; width: 1300px; }
+
+
+h1,h2,h3,h4,h5 { font-weight: normal; }
+li { list-style: square; }
+
+button { border: none; border-radius: 3px; background-color: #06a; color: #ddd; padding: 4px 20px; font: normal 90% helvetica, sans-serif; cursor: pointer; }
+button:disabled { background-color: #445; color: #888; cursor: none; }
+button:hover { background-color: #24f; color: #fff; }
+
+
+/* CONTENT */
+content { position: relative; background-color: #486a86; background: url(/media/bg.jpg); border-top: 4px solid #3c5d79; border-bottom: 4px solid #3c5d79; }
+#hero { width: 1340px; margin: 0 auto; }
+#hero-img { width: 100%; height: 446px; background: url('/media/hero2.jpg') center no-repeat; }
+#create { position: relative; top: 330px; left: 850px; text-align: center; font-size: 150%; padding: 10px 20px; border: none; border-radius: 3px; background-color: #06a; color: #ddd; padding: 10px 20px; font: normal 120% helvetica, sans-serif; cursor: pointer; text-decoration: none; }
+#wallets { display: flex; flex-direction: row; margin: 100px auto; }
+#info { width: 50%; color: #999; }
+#info h1 { margin-top: 40px; color: #fff; font-weight: 900; }
+#info h2 { color: #69c; }
+#info a  { color: #999; }
+#info a:hover { color: #fff; }
+#info a:visited { color: #999; }
+#info a:visited:hover { color: #fff; }
+#addwallet { color: #999; text-decoration: underline; }
+
+#latest { margin-top: 100px; }
+#latest h1 { margin-bottom: 50px; }
+.trend { display: flex; flex-direction: row; justify-content: space-evenly; }
+.card { display: inline-block; width: 250px; margin: 10px; padding: 20px 0; border-radius: 8px; border: 1px solid #303840; background-color: #282f38; }
+.card img { width: 200px; padding: 5px; border: 1px solid #303840; background-color: #202428; }
+.card h4 { display: block; margin: 10px 0 0; padding: 0; color: #fff; cursor: pointer; }
+.card h5 { display: block; margin:  5px 0 0; padding: 0; color: #69c; cursor: pointer; }
+
+#pics { width: 50%; }
+#pics img { width: 100%; }
+#getmeta { display: inline-block; margin: 20px 0; padding: 10px 20px; border: 1px solid #369; border-radius: 4px; color: #fff; text-decoration: none; }
+#getmeta:hover { background-color: #384048; }
+#getmeta:visited { color: #fff; }
+#getmeta:visited:hover { color: #fff; }
+
+/* FOOTER */
+#rights { text-align: center; color: #aaa; }
+
+
+@media screen and (max-width: 720px) {
+	.wrap { width: 100%; }
+	#hero { width: 100%; height: 364px; }
+	#hero-img { width: 100%; height: 360px; background: url('/media/herox.jpg') center no-repeat; }
+	#create { top: 200px; display: inline-block; left: auto; margin: 0 auto; position: relative; margin-top: 100px; margin-left: 25%; width: 40%; }
+	#wallets { display: block; width: 100%; }
+	#info { width: 80%; margin: 0 auto; text-align: center; }
+	#pics { width: 80%; margin: 0 auto; text-align: center; }
+	#pics img { width: 100%; }
+	.trend { flex-direction: column; justify-content: center; align-items: center; }
+	.card { margin-bottom: 40px; }
+}
+
+/* END */

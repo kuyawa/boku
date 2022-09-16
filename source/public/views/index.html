@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include('tmp-head.html'); %>
+	<link rel="stylesheet" type="text/css" href="/styles/common.css">
+	<link rel="stylesheet" type="text/css" href="/styles/index.css">
+</head>
+<body>
+	<%- include('tmp-header.html'); %>
+	<content>
+		<div id="hero">
+			<div id="hero-img">
+				<a id="create" href="/create">Create your blog</a>
+			</div>
+		</div>
+	</content>
+	<div id="latest" class="wrap">
+		<% if(trend.length>0) { %>
+			<h1 class="center">Read our newest blogs</h1>
+			<div class="trend">
+		  		<% trend.forEach(function(item){ %>
+				<li class="card center">
+					<a href="/a/<%=item.blogid%>">
+						<img src="/avatars/<%=item.owner%>.jpg">
+						<h4><%=item.username%></h4>
+						<h5><%=item.title%></h5>
+					</a>
+				</li>
+				<% }) %>
+			</div>
+		<% } %>
+	</div>
+	<div id="extra">
+		<div id="wallets" class="wrap">
+			<div id="info">
+				<h1>BOKU uses Metamask</h1>
+				<h2>As our preferred crypto wallet</h2>
+				<p>In order to create your blog and post content you will need to install Metamask and have some EVMOS funds as all transactions will be stored in the blockchain</p>
+				<p>Once installed, <a id="addwallet" href="https://docs.evmos.org/users/wallets/metamask.html" target="_blank">follow instructions</a> to add EVMOS network to Metamask</p>
+				<a id="getmeta" href="https://metamask.io/" target="_blank">GET METAMASK</a>
+			</div>
+			<div id="pics">
+				<a href="https://metamask.io/" target="_blank">
+					<img src="/media/metamask01.jpg">
+				</a>
+			</div>
+		</div>	
+	</div>
+	<%- include('tmp-footer.html'); %>
+	<script src="/scripts/web3.min.js"></script>
+	<script src="/scripts/wallet.js"></script>
+	<script src="/scripts/common.js"></script>
+</body>
+</html>

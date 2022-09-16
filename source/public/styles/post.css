@@ -1,0 +1,7 @@
+#editor-area { margin: 20px 0; }
+#editor { width: 700px; height: 420px; padding: 10px; background-color: #3c404a; color: #eee; border: 1px solid #40484f; }
+.ck-content { height: 400px; }
+input#title { width: 70%; padding: 5px; color: #eee; background-color: transparent; border: 1px solid #40484f; font-size: 1.2em; }
+#preview { padding: 40px; min-height: 200px; border: 1px solid #40484f; }
+nav button { background-color: #369; }
+#message-save { display: inline-block; width: 450px; height: 1em; margin-top: 0px; padding: 6px 10px; background-color: transparent; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
