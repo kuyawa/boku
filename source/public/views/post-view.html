@@ -1,0 +1,46 @@
+<%
+function dateLong(date) {
+	var opt = {
+		weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    };
+	return (new Date(date)).toLocaleDateString('en', opt);
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('tmp-head.html'); %>
+	<link rel="stylesheet" type="text/css" href="/styles/common.css">
+</head>
+<body>
+	<%- include('tmp-header.html'); %>
+	<content>
+		<div id="frames" class="wrap">
+			<%- include('tmp-side.html'); %>
+			<div id="main">
+				<article id="<%=post.postid%>">
+					<h1 class="title"><%=post.title%></h1>
+					<h5><a class="gotopost" href="/p/<%=post.postid%>">Posted on <%=dateLong(post.created)%></a></h5>
+					<div class="content">
+						<%-post.content%>
+					</div>
+					<div class="actions">
+						<nav> <button>Like</button> <button>Follow</button> </nav>
+					</div>
+				</article>
+			</div>
+			<%- include('tmp-menu.html'); %>
+		</div>
+	</content>
+	<%- include('tmp-footer.html'); %>
+	<script src="/scripts/web3.min.js"></script>
+	<script src="/scripts/wallet.js"></script>
+	<script src="/scripts/blog-abi.js"></script>
+	<script src="/scripts/blog-bin.js"></script>
+	<script src="/scripts/blog.js"></script>
+	<script src="/scripts/common.js"></script>
+</body>
+</html>

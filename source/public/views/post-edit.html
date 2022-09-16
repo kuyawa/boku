@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('tmp-head.html'); %>
+	<link rel="stylesheet" type="text/css" href="/styles/common.css">
+	<link rel="stylesheet" type="text/css" href="/styles/post.css">
+</head>
+<body>
+	<%- include('tmp-header.html'); %>
+	<content>
+		<div id="frames" class="wrap">
+			<%- include('tmp-side.html'); %>
+			<div id="main">
+				<h1 class="title">Edit post</h1>
+				<input type="text" id="title" placeholder="Post title" value="<%=post.title%>">
+				<div id="editor-area">
+					<textarea id="editor"><%=post.content%></textarea>
+				</div>
+				<nav> <button onclick="preview()">Preview</button> <button id="action-save" onclick="save()">Save</button> <span id="message-save"></span></nav>
+				<h1 class="preview title">Preview</h1>
+				<div id="preview"></div>
+			</div>
+			<%- include('tmp-menu.html'); %>
+		</div>
+	</content>
+	<%- include('tmp-footer.html'); %>
+	<script>
+	let blog = <%-JSON.stringify(blog,null,4)%>;
+	let post = <%-JSON.stringify(post,null,4)%>;
+	</script>
+	<script src="/scripts/ckeditor.js"></script>
+	<script src="/scripts/web3.min.js"></script>
+	<script src="/scripts/wallet.js"></script>
+	<script src="/scripts/blog-abi.js"></script>
+	<script src="/scripts/blog-bin.js"></script>
+	<script src="/scripts/post-edit.js"></script>
+	<script src="/scripts/common.js"></script>
+	<link rel="stylesheet" type="text/css" href="/styles/editor-dark.css">
+</body>
+</html>
